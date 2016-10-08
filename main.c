@@ -6,15 +6,15 @@
 /*   By: dbourdon <dbourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/15 14:22:51 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/09/25 15:09:07 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/10/08 15:33:11 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void		sighandler(int signum)
+void		sighandler(int signium)
 {
-	signum++;
+	signium++;
 	write(0, "\0\r", 2);
 	ft_putstr("\n\033[1;32m$\033[33m--> \033[00m");
 }

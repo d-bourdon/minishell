@@ -6,7 +6,7 @@
 /*   By: dbourdon <dbourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/18 12:18:22 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/09/24 15:14:15 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/10/08 14:55:55 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ void	free_tabtab(char **tab)
 	i = 0;
 	while (tab && tab[i])
 	{
-		free(tab[i]);
+		if (tab[i])
+			free(tab[i]);
 		i++;
 	}
-	free(tab);
+	if (tab)
+		free(tab);
 }
 
 void	free_env(void)

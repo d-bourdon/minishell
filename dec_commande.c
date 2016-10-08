@@ -6,7 +6,7 @@
 /*   By: dbourdon <dbourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/16 16:13:31 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/10/02 13:24:49 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/10/08 15:37:54 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	exec_cmd_fils(char **path, char **cmd, char **envtab)
 
 	i = 0;
 	null = 1;
-	while (path[i] && null == 1)
+	while (path && path[i] && null == 1)
 	{
 		null = 0;
 		path[i] = ft_strjoinfree(path[i], "/", 1);
@@ -37,8 +37,12 @@ int			exec_cmd(char **cmd)
 	char		**envtab;
 	pid_t		pid;
 	int			status;
-
-	path = ft_strsplit(ft_cherche_env("$PATH")->valeur, ':');
+	t_liste		*test;
+	
+	path = NULL;
+	test = ft_cherche_env("$PATH");
+	if (test)
+		path = ft_strsplit(test->valeur, ':');
 	envtab = ft_retour_env();
 	pid = fork();
 	if (pid > 0)
@@ -95,7 +99,10 @@ char		*split_commande(char *str, char **strbase)
 	free(str);
 	free(strbase);
 	if (split[0] == NULL)
+	{
+		free_tabtab(split);
 		return (NULL);
+	}
 	cmd_env(&split);
 	if (ft_exit(split) == 1)
 		return (NULL);

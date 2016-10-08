@@ -6,11 +6,12 @@
 /*   By: paim <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 14:18:06 by paim              #+#    #+#             */
-/*   Updated: 2015/12/28 11:09:57 by paim             ###   ########.fr       */
+/*   Updated: 2016/10/08 14:56:48 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_count1(char const *s, int i, char c, int tmp)
 {

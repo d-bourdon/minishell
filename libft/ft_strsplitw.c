@@ -6,7 +6,7 @@
 /*   By: dbourdon <dbourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/16 14:16:10 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/08/18 12:44:28 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/10/08 15:15:35 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ static char	**ft_count2(const char *s, int tmp2, char **tab)
 				return (NULL);
 			tmp2++;
 		}
+		if (i == 0 && tmp2 == 1)
+			free(tab[0]);
 	}
 	return (tab);
 }

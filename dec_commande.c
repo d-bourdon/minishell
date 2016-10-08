@@ -6,7 +6,7 @@
 /*   By: dbourdon <dbourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/16 16:13:31 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/10/08 15:37:54 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/10/08 16:41:45 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int			exec_cmd(char **cmd)
 	pid_t		pid;
 	int			status;
 	t_liste		*test;
-	
+
 	path = NULL;
 	test = ft_cherche_env("$PATH");
 	if (test)

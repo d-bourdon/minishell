@@ -6,7 +6,7 @@
 /*   By: dbourdon <dbourdon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/19 17:03:35 by dbourdon          #+#    #+#             */
-/*   Updated: 2016/09/16 12:38:42 by dbourdon         ###   ########.fr       */
+/*   Updated: 2016/10/08 16:35:58 by dbourdon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	ft_erreur(char *str, int mode)
 	{
 		ft_putstr("\033[31mEnv - La variable \033[00m");
 		ft_putstr(str);
-		ft_putstr("\033[31m n'existe pas.\033[00m");
-		exit(1);
+		ft_putstr("\033[31m n'existe pas.\n\033[00m");
+		return ;
 	}
 	str = NULL;
 }
